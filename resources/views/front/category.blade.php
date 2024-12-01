@@ -1,34 +1,11 @@
 
 @extends('layouts.app')
-@section('tittle', 'Training Center Poliban')
+@section('title','Training Center Poliban')
 @section('content')
 
 
 <div class="h-[112px]">
     <x-nav/>
-        <nav class="fixed top-0 flex items-center w-full justify-between p-8 bg-white z-30">
-            <a href="index.html">
-                <img src="assets/images/logos/Logo.svg" class="flex shrink-0" alt="logo">
-            </a>
-            <ul class="flex items-center justify-center gap-8">
-                <li class="font-medium text-aktiv-grey hover:font-semibold hover:text-aktiv-orange transition-all duration-300">
-                    <a href="view-booking.html">View My Booking</a>
-                </li>
-                <li class="font-medium text-aktiv-grey hover:font-semibold hover:text-aktiv-orange transition-all duration-300">
-                    <a href="">Workshop</a>
-                </li>
-                <li class="font-medium text-aktiv-grey hover:font-semibold hover:text-aktiv-orange transition-all duration-300">
-                    <a href="">Community</a>
-                </li>
-                <li class="font-medium text-aktiv-grey hover:font-semibold hover:text-aktiv-orange transition-all duration-300">
-                    <a href="">Testimony</a>
-                </li>
-            </ul>
-            <a href="#" class="flex items-center rounded-full h-12 px-6 gap-[10px] w-fit shrink-0 bg-aktiv-green">
-                <span class="font-semibold text-white">Contact CS</span>
-                <img src="assets/images/icons/whatsapp.svg" class="w-6 h-6" alt="icon">
-            </a>
-        </nav>
     </div>
     <section id="Category" class="w-full max-w-[1280px] mx-auto px-[52px] mt-[52px] mb-[100px]">
         <div class="flex flex-col gap-9">
@@ -43,7 +20,7 @@
                 </div>
             </div>
             <div class="grid grid-cols-3 gap-6">
-            
+
             @forelse ($category->workshops as $itemNewWorkshop)
                 <a href="{{route('front.details', $itemNewWorkshop->slug)}}" class="card">
                     <div class="flex flex-col h-full justify-between rounded-3xl p-6 gap-9 bg-white">
@@ -126,7 +103,7 @@
     <footer class="w-full p-[52px] bg-white">
         <div class="flex flex-col w-full max-w-[1176px] mx-auto gap-8">
             <div class="flex flex-col items-center gap-4">
-                <img src="assets/images/logos/Logo-blue.svg" class="h-10" alt="logo">
+                <img src="{{asset('assets/images/logos/Logo-blue.svg')}}" class="h-10" alt="logo">
                 <p class="font-medium text-aktiv-grey">Ipsum is a company engaged in offline education.</p>
             </div>
             <hr class="border-[#E6E7EB]">
@@ -158,6 +135,5 @@
         </div>
     </footer>
 
+
     @endsection
-
-
